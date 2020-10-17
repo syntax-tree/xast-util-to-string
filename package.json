@@ -1,6 +1,6 @@
 {
   "name": "xast-util-to-string",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "xast utility to get the text value of a node",
   "license": "MIT",
   "keywords": [
