@@ -97,9 +97,9 @@ abide by its terms.
 
 <!-- Definitions -->
 
-[build-badge]: https://img.shields.io/travis/syntax-tree/xast-util-to-string.svg
+[build-badge]: https://github.com/syntax-tree/xast-util-to-string/workflows/main/badge.svg
 
-[build]: https://travis-ci.org/syntax-tree/xast-util-to-string
+[build]: https://github.com/syntax-tree/xast-util-to-string/actions
 
 [coverage-badge]: https://img.shields.io/codecov/c/github/syntax-tree/xast-util-to-string.svg
 
