@@ -15,6 +15,9 @@ The resulting text is returned.
 
 ## Install
 
+This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
+Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
+
 [npm][]:
 
 ```sh
@@ -24,8 +27,8 @@ npm install xast-util-to-string
 ## Use
 
 ```js
-var x = require('xastscript')
-var toString = require('xast-util-to-string')
+import {x} from 'xastscript'
+import {toString} from 'xast-util-to-string'
 
 var tree = x(
   'ncx',
@@ -49,6 +52,9 @@ A Christmas CarolCharles Dickens
 ```
 
 ## API
+
+This package exports the following identifiers: `toString`.
+There is no default export.
 
 ### `toString(node)`
 
