@@ -13,9 +13,7 @@
  */
 export function toString(node) {
   // A root or an element
-  // @ts-ignore Looks like a parent.
   if ('children' in node) return all(node)
-  // @ts-ignore Looks like a literal.
   return 'value' in node ? node.value : ''
 }
 
@@ -26,8 +24,7 @@ export function toString(node) {
 function one(node) {
   if (node.type === 'text') return node.value
   // Ignore things like comments, instruction, cdata.
-  // @ts-ignore Looks like a parent.
-  return node.children ? all(node) : ''
+  return 'children' in node ? all(node) : ''
 }
 
 /**
