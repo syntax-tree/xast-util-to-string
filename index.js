@@ -35,10 +35,10 @@ function one(node) {
  * @returns {string}
  */
 function all(node) {
-  var children = node.children
-  var index = -1
+  const children = node.children
+  let index = -1
   /** @type {Array.<string>} */
-  var result = []
+  const result = []
 
   while (++index < children.length) {
     result[index] = one(children[index])

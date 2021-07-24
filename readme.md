@@ -30,7 +30,7 @@ npm install xast-util-to-string
 import {x} from 'xastscript'
 import {toString} from 'xast-util-to-string'
 
-var tree = x(
+const tree = x(
   'ncx',
   {xmlns: 'http://www.daisy.org/z3986/2005/ncx/', version: '2005-1'},
   [

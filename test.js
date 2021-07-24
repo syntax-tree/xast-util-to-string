@@ -2,7 +2,7 @@ import test from 'tape'
 import {u} from 'unist-builder'
 import {toString} from './index.js'
 
-test('xast-util-to-string', function (t) {
+test('xast-util-to-string', (t) => {
   t.deepEqual(
     toString(u('cdata', '<greeting>Hello, world!</greeting>')),
     '<greeting>Hello, world!</greeting>',
