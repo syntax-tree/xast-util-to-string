@@ -8,20 +8,56 @@
 [![Backers][backers-badge]][collective]
 [![Chat][chat-badge]][chat]
 
-[**xast**][xast] utility to get the plain text value of a [*node*][node].
+[xast][] utility to get the plain-text value of a node.
 
-This is like the DOMs `Node#textContent` getter but there are some deviations.
-The resulting text is returned.
+## Contents
+
+*   [What is this?](#what-is-this)
+*   [When should I use this?](#when-should-i-use-this)
+*   [Install](#install)
+*   [Use](#use)
+*   [API](#api)
+    *   [`toString(node)`](#tostringnode)
+*   [Types](#types)
+*   [Compatibility](#compatibility)
+*   [Security](#security)
+*   [Related](#related)
+*   [Contribute](#contribute)
+*   [License](#license)
+
+## What is this?
+
+This package is a utility that takes a [xast][] node and gets its plain-text
+value.
+This is like the DOMs `Node#textContent` getter but there are some small
+deviations.
+
+## When should I use this?
+
+This is a small utility that is useful when you want a plain-text version of a
+node when working with xast (XML).
 
 ## Install
 
-This package is [ESM only](https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c):
-Node 12+ is needed to use it and it must be `import`ed instead of `require`d.
-
-[npm][]:
+This package is [ESM only][esm].
+In Node.js (version 12.20+, 14.14+, 16.0+, 18.0+), install with [npm][]:
 
 ```sh
 npm install xast-util-to-string
+```
+
+In Deno with [`esm.sh`][esmsh]:
+
+```js
+import {toString} from "https://esm.sh/xast-util-to-string@2"
+```
+
+In browsers with [`esm.sh`][esmsh]:
+
+```html
+<script type="module">
+  import {toString} from "https://esm.sh/xast-util-to-string@2?bundle"
+</script>
 ```
 
 ## Use
@@ -53,12 +89,12 @@ A Christmas CarolCharles Dickens
 
 ## API
 
-This package exports the following identifiers: `toString`.
+This package exports the identifier `toString`.
 There is no default export.
 
 ### `toString(node)`
 
-Utility to get the plain text value of a [*node*][node].
+Get the plain text value of a node.
 If the node has a `value` field ([*cdata*][cdata], [*comment*][comment],
 [*doctype*][doctype], [*instruction*][instruction], or [*text*][text]), returns
 it.
@@ -67,7 +103,19 @@ recurses into it to concatenate all [*text*][text]s.
 
 ###### Returns
 
-`string` — Serialized `node`.
+Serialized `node` (`string`).
+
+## Types
+
+This package is fully typed with [TypeScript][].
+It exports no additional types.
+
+## Compatibility
+
+Projects maintained by the unified collective are compatible with all maintained
+versions of Node.js.
+As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
 
@@ -78,19 +126,19 @@ for [cross-site scripting (XSS)][xss] attacks.
 
 *   [`xast-util-to-xml`](https://github.com/syntax-tree/xast-util-to-xml)
     — serialize xast to XML
-*   [`hast-util-to-string`](https://github.com/rehypejs/rehype-minify/tree/HEAD/packages/hast-util-to-string)
+*   [`hast-util-to-string`](https://github.com/rehypejs/rehype-minify/tree/main/packages/hast-util-to-string)
     — get the plain-text value (`textContent`)
 *   [`hast-util-to-text`](https://github.com/syntax-tree/hast-util-to-text)
     — get the plain-text value (`innerText`)
 *   [`hast-util-from-text`](https://github.com/syntax-tree/hast-util-from-text)
     — set the plain-text value (`innerText`)
-*   [`hast-util-from-string`](https://github.com/rehypejs/rehype-minify/tree/HEAD/packages/hast-util-from-string)
+*   [`hast-util-from-string`](https://github.com/rehypejs/rehype-minify/tree/main/packages/hast-util-from-string)
     — set the plain-text value (`textContent`)
 
 ## Contribute
 
-See [`contributing.md` in `syntax-tree/.github`][contributing] for ways to get
-started.
+See [`contributing.md`][contributing] in [`syntax-tree/.github`][health] for
+ways to get started.
 See [`support.md`][support] for ways to get help.
 
 This project has a [code of conduct][coc].
@@ -131,19 +179,25 @@ abide by its terms.
 
 [npm]: https://docs.npmjs.com/cli/install
 
+[esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
+[esmsh]: https://esm.sh
+
+[typescript]: https://www.typescriptlang.org
+
 [license]: license
 
 [author]: https://wooorm.com
 
-[contributing]: https://github.com/syntax-tree/.github/blob/HEAD/contributing.md
+[health]: https://github.com/syntax-tree/.github
 
-[support]: https://github.com/syntax-tree/.github/blob/HEAD/support.md
+[contributing]: https://github.com/syntax-tree/.github/blob/main/contributing.md
 
-[coc]: https://github.com/syntax-tree/.github/blob/HEAD/code-of-conduct.md
+[support]: https://github.com/syntax-tree/.github/blob/main/support.md
+
+[coc]: https://github.com/syntax-tree/.github/blob/main/code-of-conduct.md
 
 [xast]: https://github.com/syntax-tree/xast
-
-[node]: https://github.com/syntax-tree/xast#nodes
 
 [root]: https://github.com/syntax-tree/xast#root
 
