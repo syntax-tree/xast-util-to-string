@@ -34,7 +34,7 @@ function one(node) {
 function all(node) {
   const children = node.children
   let index = -1
-  /** @type {Array.<string>} */
+  /** @type {Array<string>} */
   const result = []
 
   while (++index < children.length) {
