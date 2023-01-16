@@ -1,31 +1,36 @@
-import test from 'tape'
+import assert from 'node:assert/strict'
+import test from 'node:test'
 import {u} from 'unist-builder'
 import {toString} from './index.js'
 
-test('xast-util-to-string', (t) => {
-  t.deepEqual(
+test('xast-util-to-string', () => {
+  assert.deepEqual(
     toString(u('cdata', '<greeting>Hello, world!</greeting>')),
     '<greeting>Hello, world!</greeting>',
     'should serialize cdata'
   )
 
-  t.deepEqual(toString(u('comment', 'foo')), 'foo', 'should serialize comments')
+  assert.deepEqual(
+    toString(u('comment', 'foo')),
+    'foo',
+    'should serialize comments'
+  )
 
-  t.deepEqual(
+  assert.deepEqual(
     toString(u('instruction', {name: 'xml'}, 'version="1.0" encoding="UTF-8"')),
     'version="1.0" encoding="UTF-8"',
     'should serialize instructions'
   )
 
-  t.deepEqual(toString(u('text', 'foo')), 'foo', 'should serialize texts')
+  assert.deepEqual(toString(u('text', 'foo')), 'foo', 'should serialize texts')
 
-  t.deepEqual(
+  assert.deepEqual(
     toString(u('doctype', {name: 'html'})),
     '',
     'should return empty for doctypes'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     toString(
       u('element', {name: 'package'}, [
         u('text', 'foo '),
@@ -37,7 +42,7 @@ test('xast-util-to-string', (t) => {
     'should serialize elements (excluding non-parent and non-text descendants)'
   )
 
-  t.deepEqual(
+  assert.deepEqual(
     toString(
       u('root', [
         u('doctype', {name: 'html'}),
@@ -49,6 +54,4 @@ test('xast-util-to-string', (t) => {
     'foo  baz',
     'should serialize roots (excluding non-parent and non-text descendants)'
   )
-
-  t.end()
 })
