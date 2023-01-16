@@ -40,7 +40,7 @@ node when working with xast (XML).
 ## Install
 
 This package is [ESM only][esm].
-In Node.js (version 12.20+, 14.14+, 16.0+, 18.0+), install with [npm][]:
+In Node.js (version 14.14+ and 16.0+), install with [npm][]:
 
 ```sh
 npm install xast-util-to-string
@@ -49,14 +49,14 @@ npm install xast-util-to-string
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {toString} from "https://esm.sh/xast-util-to-string@2"
+import {toString} from 'https://esm.sh/xast-util-to-string@2'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {toString} from "https://esm.sh/xast-util-to-string@2?bundle"
+  import {toString} from 'https://esm.sh/xast-util-to-string@2?bundle'
 </script>
 ```
 
@@ -89,17 +89,17 @@ A Christmas CarolCharles Dickens
 
 ## API
 
-This package exports the identifier `toString`.
+This package exports the identifier [`toString`][tostring].
 There is no default export.
 
 ### `toString(node)`
 
 Get the plain text value of a node.
-If the node has a `value` field ([*cdata*][cdata], [*comment*][comment],
-[*doctype*][doctype], [*instruction*][instruction], or [*text*][text]), returns
-it.
-If the node has a `children` field ([*root*][root] or [*element*][element]),
-recurses into it to concatenate all [*text*][text]s.
+
+If the node has a `value` field (*[cdata][]*, *[comment][]*, *[doctype][]*,
+*[instruction][]*, or *[text][]*), returns it.
+If the node has a `children` field (*[root][]* or *[element][]*), recurses into
+it to concatenate all texts.
 
 ###### Returns
 
@@ -114,7 +114,7 @@ It exports no additional types.
 
 Projects maintained by the unified collective are compatible with all maintained
 versions of Node.js.
-As of now, that is Node.js 12.20+, 14.14+, 16.0+, and 18.0+.
+As of now, that is Node.js 14.14+ and 16.0+.
 Our projects sometimes work with older versions, but this is not guaranteed.
 
 ## Security
@@ -214,3 +214,5 @@ abide by its terms.
 [text]: https://github.com/syntax-tree/xast#text
 
 [xss]: https://en.wikipedia.org/wiki/Cross-site_scripting
+
+[tostring]: #tostringnode
