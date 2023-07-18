@@ -1,11 +1,11 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import {u} from 'unist-builder'
-import {toString} from './index.js'
+import {toString} from 'xast-util-to-string'
 
 test('toString', async function (t) {
   await t.test('should expose the public api', async function () {
-    assert.deepEqual(Object.keys(await import('./index.js')).sort(), [
+    assert.deepEqual(Object.keys(await import('xast-util-to-string')).sort(), [
       'toString'
     ])
   })
