@@ -39,10 +39,10 @@ test('toString', () => {
 
   assert.deepEqual(
     toString(
-      u('element', {name: 'package'}, [
+      u('element', {name: 'package', attributes: {}}, [
         u('text', 'foo '),
         u('comment', 'bar'),
-        u('element', {name: 'thing'}, [u('text', ' baz')])
+        u('element', {name: 'thing', attributes: {}}, [u('text', ' baz')])
       ])
     ),
     'foo  baz',
@@ -55,7 +55,7 @@ test('toString', () => {
         u('doctype', {name: 'html'}),
         u('text', 'foo '),
         u('comment', 'bar'),
-        u('element', {name: 'thing'}, [u('text', ' baz')])
+        u('element', {name: 'thing', attributes: {}}, [u('text', ' baz')])
       ])
     ),
     'foo  baz',
