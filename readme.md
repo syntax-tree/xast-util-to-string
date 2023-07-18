@@ -49,14 +49,14 @@ npm install xast-util-to-string
 In Deno with [`esm.sh`][esmsh]:
 
 ```js
-import {toString} from 'https://esm.sh/xast-util-to-string@2'
+import {toString} from 'https://esm.sh/xast-util-to-string@3'
 ```
 
 In browsers with [`esm.sh`][esmsh]:
 
 ```html
 <script type="module">
-  import {toString} from 'https://esm.sh/xast-util-to-string@2?bundle'
+  import {toString} from 'https://esm.sh/xast-util-to-string@3?bundle'
 </script>
 ```
 
